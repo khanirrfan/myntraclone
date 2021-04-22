@@ -71,7 +71,7 @@ export const InfoCard = styled.div`
   height:30px;
   background-color: #343434;
   position: absolute;
-  margin-top:80px
+  margin-top:80px;
 `;
 export const NavProfile = styled.ul`
   display: flex;
@@ -79,7 +79,9 @@ export const NavProfile = styled.ul`
   margin: 0 auto;
 `;
 
-export const NavProfileItems = styled.li`
+export const NavProfileItems = styled(LinkR)`
+  text-decoration: none;
+  color:#000;
   margin: 0 10px;
   display: flex;
   align-items: center;

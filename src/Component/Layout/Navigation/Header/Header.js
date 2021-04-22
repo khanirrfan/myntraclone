@@ -52,7 +52,7 @@ const Header = () => {
                     <NavProfileItems>
                         WishList
                     </NavProfileItems>
-                    <NavProfileItems>
+                    <NavProfileItems to = '/checkout'>
                         Bag {bag?.length }
                     </NavProfileItems>
                 </NavProfile>

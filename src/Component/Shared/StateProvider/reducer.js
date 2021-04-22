@@ -1,19 +1,26 @@
 export const initialState = {
-    bag:[],
+    bag: [],
 }
 
-function reducer(state, action){
+function reducer(state, action) {
     console.log(action.type);
-    switch(action.type){
-        case 'ADD_TO_BAG' :
+    switch (action.type) {
+        case 'ADD_TO_BAG':
             // logic
-            return { ...state, bag:[...state.bag, action.payload]};
+            return { ...state, bag: [...state.bag, action.payload] };
             break;
-        case 'REMOVE_FROM_BAg' :
+        case 'REMOVE_FROM_BAG':
             // LOGIC
-            return { state};
+            let newBag = [...state.bag];
+            const index = state.bag.findIndex((items) => items.productId === action.id);
+            if (index >= 0) {
+                newBag.splice(index, 1);
+            } else {
+
+            }
+            return { ...state, bag: newBag };
             break;
-        default : 
+        default:
             return state;
     }
 }

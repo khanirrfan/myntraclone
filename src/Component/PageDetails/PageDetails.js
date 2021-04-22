@@ -36,7 +36,7 @@ const PageDetails = () => {
     const addToBag = () => {
         dispatch({
             type:'ADD_TO_BAG',
-            payload: item
+            payload: item.item
         })
     }
     return (

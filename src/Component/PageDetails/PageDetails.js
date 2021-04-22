@@ -19,16 +19,26 @@ import {
 import { useLocation } from "react-router-dom";
 
 import Breadcrumb from '../Shared/Breadcrumb/Breadcrumb';
+import { useStateValue } from '../Shared/StateProvider/StateProvider';
 
 const PageDetails = () => {
+    const [{bag}, dispatch] = useStateValue();
+
     let location = useLocation()
     const [item, setItem] = useState()
     console.log(item)
     useEffect(() => {
 
         setItem(location);
-    });
+    }, []);
     console.log(item)
+
+    const addToBag = () => {
+        dispatch({
+            type:'ADD_TO_BAG',
+            payload: item
+        })
+    }
     return (
         <>
 
@@ -78,7 +88,7 @@ const PageDetails = () => {
 
                         </SizeDetailContainer>
                         <ButtonContainer>
-                            <Buttons>Add to bag</Buttons>
+                            <Buttons onClick = {()=>addToBag()}>Add to bag</Buttons>
                             <Buttons>Wishlist</Buttons>
                         </ButtonContainer>
                     </ItemDetailContainer>

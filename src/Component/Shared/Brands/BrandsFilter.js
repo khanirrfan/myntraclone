@@ -20,7 +20,7 @@ const BrandsFilter = ({filter, getFilterType}) => {
         <p>Brands</p>
         <UnorderedList>
         { filter.filterValues &&
-            filter.filterValues.slice(0,8).map((item, index) => {
+            filter.filterValues.map((item, index) => {
                 return ( <Checkbox key ={index} item={item} getFilterType = {(e) => {brands(e)}} />)
             })
         }

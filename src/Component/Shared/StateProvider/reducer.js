@@ -12231,12 +12231,14 @@ function reducer(state, action) {
         
             return {...state}
         case "BRAND":
-        
+            const newDataBrand = state.homeData.results.products.filter((item) => item.brand === action.payload);
+            console.log(newDataBrand);
+            state.homeData.results.products = newDataBrand;
             return {...state}
         case "CATEGORY":
-            const newData = state.homeData.results.products.filter((item) => item.category === action.payload);
-            console.log(newData);
-            state.homeData.results.products = newData;
+            const newDataCategory = state.homeData.results.products.filter((item) => item.category === action.payload);
+            console.log(newDataCategory);
+            state.homeData.results.products = newDataCategory;
             return {...state}
         default:
             return state;

@@ -10,7 +10,7 @@ const Items = ({ element, sortFilter }) => {
     useEffect(() => {
         setSortBy(sortFilter);
     }, [])
-    console.log(sortFilter);
+    // console.log(sortFilter);
     return (
         <>
         <HeaderFilter>

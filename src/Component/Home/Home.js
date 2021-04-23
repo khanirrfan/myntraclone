@@ -8,16 +8,29 @@ import { BreadcrumbContainer, Container, FilterContainer, ItemContainer, HomeCon
 import { useStateValue } from '../Shared/StateProvider/StateProvider';
 const Home = () => {
     const [state, setstate] = useState();
-    const [{homeData, bag, wishlist}, dispatch] = useStateValue();
+    const [{ homeData, bag, wishlist }, dispatch] = useStateValue();
 
     useEffect(() => {
         setstate(homeData);
-    }, []);
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    });
     console.log(state);
 
     const getFilter = () => {
         console.log("hello from filter")
     }
+
+
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+    console.log(width);
+    let isMobile = (width <= 920);
+    console.log(isMobile);
     return (
 
         <HomeContainer>
@@ -27,11 +40,13 @@ const Home = () => {
 
             <Container>
 
-                <FilterContainer>
-                    { state &&
-                        <Filter items={ state.results.filters } filterChange = {(e) => getFilter(e)}/>
-                    }
-                </FilterContainer>
+                { !isMobile &&
+                    <FilterContainer>
+                        { state &&
+                            <Filter items={ state.results.filters } filterChange={ (e) => getFilter(e) } />
+                        }
+                    </FilterContainer>
+                }
 
                 <ItemContainer>
                     { state &&

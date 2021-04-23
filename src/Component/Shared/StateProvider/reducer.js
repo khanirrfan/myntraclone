@@ -12207,7 +12207,6 @@ export const initialState = {
 
 
 function reducer(state, action) {
-    console.log(action.type, action.payload);
     switch (action.type) {
         case 'ADD_TO_BAG':
             return { ...state, bag: [...state.bag, action.payload] };
@@ -12231,9 +12230,14 @@ function reducer(state, action) {
         
             return {...state}
         case "BRAND":
+            let copyHomeData = state.homeData;
             const newDataBrand = state.homeData.results.products.filter((item) => item.brand === action.payload);
             console.log(newDataBrand);
             state.homeData.results.products = newDataBrand;
+            if(!(action.payload)){
+                state.homeData.results.products = copyHomeData;
+                console.log("brnad payload is empty", typeof(action.payload))
+            }
             return {...state}
         case "CATEGORY":
             const newDataCategory = state.homeData.results.products.filter((item) => item.category === action.payload);

@@ -21,7 +21,7 @@ const Item = ({ element }) => {
 
     const ItemDetails = (element) => {
         setItem(element);
-        console.log(element)
+        // console.log(element)
     }
     const addToWishlist = (e) => {
         e.preventDefault()

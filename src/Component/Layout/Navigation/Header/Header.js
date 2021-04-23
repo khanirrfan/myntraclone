@@ -7,18 +7,25 @@ import { Nav, NavbarContainer, NavLogo, LogoImage, NavMenu, NavMenuItems, NavPro
 
 
 const Header = () => {
-    const [{bag}, dispatch] = useStateValue();
-    const [searchInput, setSearchInput] = useState('')
-    console.log(bag);
-    const getInputData = (e) =>{
-        console.log("Hello from search", e.target.value);
-        let data = e.target.value;
+    const [{bag, wishlist}, dispatch] = useStateValue();
+    const [searchQuery, setSearchQuery] = useState("")
+    // console.log(bag);
+    const handleChangeQuery = (e) => {
+        setSearchQuery(e.target.value)
+        console.log(searchQuery);
+        dispatch({
+            type:"SEARCH",
+            payload:searchQuery
+        })
 
-        setSearchInput(data);
-        console.log(searchInput);
-    } 
+    }
+    const handleSearch = () => {
+        // dispatch({
+        //     type:"SEARCH",
+        //     payload:searchQuery
+        // })
+    }
     return (
-      
     <>
         <Nav>
             <NavbarContainer>
@@ -44,15 +51,18 @@ const Header = () => {
                         Offers
                 </NavMenuItems>
                 </NavMenu>
-                <Search handleSearch ={(e) => getInputData(e) }/>
+                <Search 
+                    value = {searchQuery}
+                    handleChangeQuery = {handleChangeQuery}
+                    handleSearch = {handleSearch}/>
                 <NavProfile>
                     <NavProfileItems>
                         Profile
                 </NavProfileItems>
-                    <NavProfileItems>
-                        WishList
+                    <NavProfileItems to ="/wishlist">
+                        WishList {wishlist?.length}
                     </NavProfileItems>
-                    <NavProfileItems to = '/checkout'>
+                    <NavProfileItems to = "/checkout">
                         Bag {bag?.length }
                     </NavProfileItems>
                 </NavProfile>

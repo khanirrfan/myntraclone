@@ -13,6 +13,9 @@ const Filter = ({ items, filterChange }) => {
     const brand = () => {
         console.log("hello from brand");
     }
+    const category = () => {
+        console.log("Hello from category");
+    }
     return (
         <>
         <p>Filters</p>
@@ -22,13 +25,13 @@ const Filter = ({ items, filterChange }) => {
                         return (
                             <>
                                 { filter.id === "Gender" &&
-                                    <GenderFilter key={ index } filter={ filter } getGender = {(e) => {gender(e)}}/>
+                                    <GenderFilter key={ index } filter={ filter } />
                                 }
                                 { filter.id === "Categories" &&
-                                    <CategoryFilter key={ index } filter={ filter } getFilterType = {(e) => {gender(e)}}/>
+                                    <CategoryFilter key={ index } filter={ filter } />
                                 }
                                 { filter.id === 'Brand' &&
-                                    <BrandsFilter key={ index } filter={ filter } getFilterType = {(e) => {brand(e)}}/>
+                                    <BrandsFilter key={ index } filter={ filter } />
 
                                 }
                             </>

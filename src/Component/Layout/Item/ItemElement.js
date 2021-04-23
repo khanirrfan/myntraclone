@@ -12,6 +12,7 @@ export const ItemImageContainer = styled(Link)`
     /* border:1px solid green; */
     /* text-align:center; */
     margin:1px;
+    
 `;
 export const ItemDetailContainer = styled.div`
     width:15%;

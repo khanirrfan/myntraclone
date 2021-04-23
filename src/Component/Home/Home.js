@@ -5,12 +5,13 @@ import Breadcrumb from '../Shared/Breadcrumb/Breadcrumb';
 
 import { BreadcrumbContainer, Container, FilterContainer, ItemContainer, HomeContainer } from './HomeElement';
 
-import data from '../Shared/Data/data.json'
+import { useStateValue } from '../Shared/StateProvider/StateProvider';
 const Home = () => {
     const [state, setstate] = useState();
+    const [{homeData, bag, wishlist}, dispatch] = useStateValue();
 
     useEffect(() => {
-        setstate(data);
+        setstate(homeData);
     }, []);
     console.log(state);
 

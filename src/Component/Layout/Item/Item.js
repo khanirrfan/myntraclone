@@ -40,7 +40,9 @@ const Item = ({ element }) => {
                 <Img src={ element.searchImage } />
                 { isShown &&
                     <>
-                        <Buttons onClick={(e) => addToWishlist(e)}>WishList</Buttons>
+                        {/*<Buttons onClick={(e) => addToWishlist(e)}>*/}
+                        <h3>WishList</h3>
+                        {/*</Buttons>*/}
                         <span>Size : { element.sizes }</span>
                         <span><strong>Rs. </strong>{ element.price } <del>Rs. { element.mrp }</del> <span style={ { color: 'red' } }>{ element.discountDisplayLabel }</span></span>
                     </>

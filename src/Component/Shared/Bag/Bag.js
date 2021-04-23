@@ -6,7 +6,7 @@ import { CheckoutContainer, ItemContainer, ImageContainer, ItemsDetailsContainer
 
 const Bag = () => {
     const [{ bag }] = useStateValue();
-    console.log(bag)
+    // console.log(bag)
     return (
         <>
             <CheckoutContainer>

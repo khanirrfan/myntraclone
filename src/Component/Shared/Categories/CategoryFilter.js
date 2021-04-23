@@ -8,7 +8,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 const CategoryFilter = ({filter}) => {
     const [{homeData, bag, wishlist, brand}, dispatch] = useStateValue();
     const category = (e) => {
-        console.log("hello from category");
+        // console.log("hello from category");
         dispatch({
             type:"CATEGORY",
             payload: e.target.value

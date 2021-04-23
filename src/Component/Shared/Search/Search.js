@@ -6,7 +6,7 @@ const Search = ({value, handleChangeQuery, handleSearch}) => {
     const [{bag}, dispatch] = useStateValue();
     const [inputString, setInputString] = useState('');
     const searchString = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setInputString()
         dispatch({
             type:'SEARCH',

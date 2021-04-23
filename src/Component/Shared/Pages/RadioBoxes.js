@@ -1,8 +1,8 @@
 import React from 'react'
 import { Lists, InputCheckbox } from './SharedPagesElement'
 const RadioBoxes = ({item, getGender}) => {
-    
-console.log(item);
+
+// console.log(item);
     return (
         <div>
         <Lists>

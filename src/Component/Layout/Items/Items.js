@@ -4,9 +4,12 @@ import { ItemsContainer, HeaderFilter, SortFilter, FilterChips } from './ItemsEl
 import Item from '../Item/Item';
 import SelectButton from '../../Shared/Pages/SelectButton';
 import ButtonChips from '../../Shared/Pages/ButtonChips';
+import { useStateValue } from '../../Shared/StateProvider/StateProvider';
 
 const Items = ({ element, sortFilter }) => {
     const [sortBy, setSortBy] = useState();
+    const[{category, brand, gender}, dispatch] = useStateValue();
+    // console.log(category, brand, gender)
     useEffect(() => {
         setSortBy(sortFilter);
     }, [])
@@ -26,10 +29,13 @@ const Items = ({ element, sortFilter }) => {
         </HeaderFilter>
 
             <ItemsContainer>
-                { element &&
+                { element ? (
                     element.map((listItem, index) => {
                         return <Item key={ listItem.productId } element={ listItem } />
                     })
+                ):(
+                    <h1>No data found</h1>
+                )
                 }
             </ItemsContainer>
         </>

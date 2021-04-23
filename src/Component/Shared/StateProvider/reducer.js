@@ -12227,23 +12227,17 @@ function reducer(state, action) {
         case 'WISHLIST' :
             return { ...state, wishlist:[...state.bag, action.payload]};    
         case "GENDER":
-        
-            return {...state}
+            let genderData = state.homeData.results.products.filter((item) => item.gender === action.payload)
+            state.homeData.results.products = genderData;
+            return {...state, gender: action.payload}
         case "BRAND":
-            let copyHomeData = state.homeData;
             const newDataBrand = state.homeData.results.products.filter((item) => item.brand === action.payload);
-            console.log(newDataBrand);
             state.homeData.results.products = newDataBrand;
-            if(!(action.payload)){
-                state.homeData.results.products = copyHomeData;
-                console.log("brnad payload is empty", typeof(action.payload))
-            }
-            return {...state}
+            return {...state, brand:[...state.bag, action.payload]}
         case "CATEGORY":
             const newDataCategory = state.homeData.results.products.filter((item) => item.category === action.payload);
-            console.log(newDataCategory);
             state.homeData.results.products = newDataCategory;
-            return {...state}
+            return {...state, category:[...state.category, action.payload]}
         default:
             return state;
     }

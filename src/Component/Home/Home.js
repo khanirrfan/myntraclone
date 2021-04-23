@@ -17,10 +17,8 @@ const Home = () => {
             window.removeEventListener('resize', handleWindowSizeChange);
         }
     });
-    console.log(state);
 
     const getFilter = () => {
-        console.log("hello from filter")
     }
 
 
@@ -28,9 +26,7 @@ const Home = () => {
     const handleWindowSizeChange = () => {
         setWidth(window.innerWidth);
     }
-    console.log(width);
     let isMobile = (width <= 920);
-    console.log(isMobile);
     return (
 
         <HomeContainer>

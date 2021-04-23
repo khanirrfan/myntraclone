@@ -8,7 +8,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 const BrandsFilter = ({filter, getFilterType}) => {
     const [{homeData, bag, wishlist, brand}, dispatch] = useStateValue();
     const brands = (e) => {
-        console.log("hello from brands");
+        // console.log("hello from brands");
         dispatch({
             type:"BRAND",
             payload: e.target.value

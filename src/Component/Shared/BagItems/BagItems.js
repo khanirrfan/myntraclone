@@ -4,7 +4,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 import { ImageContainer, ItemsDetailsContainer, CartContainer, Img, ItemCart, CartButton } from './BagItemsElement';
 const BagItems = ({ items }) => {
 
-    console.log(items.productId);
+    // console.log(items.productId);
     const [{bag}, dispatch] = useStateValue()
     const removeFromBasket = () => {
         dispatch({

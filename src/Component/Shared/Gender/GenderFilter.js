@@ -8,7 +8,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 const GenderFilter = ({filter}) => {
     const [{homeData, bag, wishlist, brand}, dispatch] = useStateValue();
     const gender = (e) => {
-        console.log("hello from gender");
+        // console.log("hello from gender");
         dispatch({
             type:"GENDER",
             payload: e.target.value

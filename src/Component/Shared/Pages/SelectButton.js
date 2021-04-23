@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import { SelectWrapper, SelectHeader, SelectTitle, SelectList, Buttons, ButtonsList } from './SharedPagesElement'
 const SelectButton = ({ title, item}) => {
     const [isListOpen, setIsListOpen] = useState(false)
-    console.log(title);
+    // console.log(title);
     const toggleList = () => {
         setIsListOpen(!isListOpen);
     }
     const selectItem =item => {
-        console.log(item);
+        // console.log(item);
     }
     return (
         <>

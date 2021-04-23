@@ -26,12 +26,12 @@ const PageDetails = () => {
 
     let location = useLocation()
     const [item, setItem] = useState()
-    console.log(item)
+    // console.log(item)
     useEffect(() => {
 
         setItem(location);
     }, []);
-    console.log(item)
+    // console.log(item)
 
     const addToBag = () => {
         dispatch({

@@ -12,7 +12,7 @@ const Header = () => {
     // console.log(bag);
     const handleChangeQuery = (e) => {
         setSearchQuery(e.target.value)
-        console.log(searchQuery);
+        // console.log(searchQuery);
         dispatch({
             type:"SEARCH",
             payload:searchQuery

@@ -5,17 +5,6 @@ import GenderFilter from '../../Shared/Gender/GenderFilter'
 
 import { SectionFilter } from './FilterElement';
 const Filter = ({ items, filterChange }) => {
-    const [genderType, setGenderType] = useState();
-
-    const gender = (e) => {
-        console.log("hello from gender");
-    }
-    const brand = () => {
-        console.log("hello from brand");
-    }
-    const category = () => {
-        console.log("Hello from category");
-    }
     return (
         <>
         <p>Filters</p>

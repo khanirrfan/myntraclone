@@ -12234,7 +12234,9 @@ function reducer(state, action) {
         
             return {...state}
         case "CATEGORY":
-        
+            const newData = state.homeData.results.products.filter((item) => item.category === action.payload);
+            console.log(newData);
+            state.homeData.results.products = newData;
             return {...state}
         default:
             return state;

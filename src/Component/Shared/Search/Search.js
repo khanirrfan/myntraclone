@@ -6,8 +6,8 @@ const Search = ({value, handleChangeQuery, handleSearch}) => {
     const [{bag}, dispatch] = useStateValue();
     const [inputString, setInputString] = useState('');
     const searchString = (e) => {
-        // console.log(e.target.value);
-        setInputString()
+        console.log(e.target.value);
+        setInputString(e.target.value);
         dispatch({
             type:'SEARCH',
             payload:e.target.value
@@ -20,8 +20,9 @@ const Search = ({value, handleChangeQuery, handleSearch}) => {
                 <InputSearch 
                 style={{width:'500px', height:"30px"}} 
                 type="text" 
+                value ={ inputString }
                 placeholder = "Search products, brands and many more"
-                onChange = {(e)=>handleChangeQuery(e)}
+                onChange = {(e)=>searchString(e)}
                 name = "search"/>
             </SearchBar>
         </>

@@ -39,6 +39,12 @@ const PageDetails = () => {
             payload: item.item
         })
     }
+    const addToWishlist = () => {
+        dispatch({
+            type: 'WISHLIST',
+            payload: item.item
+        })
+    }
     return (
         <>
 
@@ -52,7 +58,7 @@ const PageDetails = () => {
                             { item &&
                                 item.item.images.filter((list) => list.view !== "size_representation").map((ele, index) => {
                                     return <Img src={ ele.src } />
-                                })
+                                }) 
                             }
 
                         </ImageContainer>
@@ -89,7 +95,7 @@ const PageDetails = () => {
                         </SizeDetailContainer>
                         <ButtonContainer>
                             <Buttons onClick = {()=>addToBag()}>Add to bag</Buttons>
-                            <Buttons>Wishlist</Buttons>
+                            <Buttons onClick ={() => addToWishlist()}>Wishlist</Buttons>
                         </ButtonContainer>
                     </ItemDetailContainer>
                 </DetailsContainer>

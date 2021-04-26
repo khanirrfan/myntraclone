@@ -12226,7 +12226,7 @@ function reducer(state, action) {
                 return {...state, search: action.payload};
             break;
         case 'WISHLIST' :
-            return { ...state, wishlist:[...state.bag, action.payload]};    
+            return { ...state, wishlist:[...state.wishlist, action.payload]};    
         case "GENDER":
             let genderData = state.homeData.results.products.filter((item) => item.gender === action.payload)
             state.homeData.results.products = genderData;

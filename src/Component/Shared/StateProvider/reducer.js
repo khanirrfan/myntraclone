@@ -12207,6 +12207,7 @@ export const initialState = {
 
 
 function reducer(state, action) {
+   // console.log('action.payload',action.payload)
     switch (action.type) {
         case 'ADD_TO_BAG':
             return { ...state, bag: [...state.bag, action.payload] };
@@ -12231,9 +12232,23 @@ function reducer(state, action) {
             state.homeData.results.products = genderData;
             return {...state, gender: action.payload}
         case "BRAND":
-            const newDataBrand = state.homeData.results.products.filter((item) => item.brand === action.payload);
+         //   let newState = {...state}
+         //   console.log('brandsArr',newState);
+         //   if(newState.brand.length >0){
+         //   newState.brand.filter((item, index) => {
+         //      if(item === action.payload) {
+         //         newState.brand.splice(index, 1)
+         //      } else {
+         //       newState = {...state, brand:[...state.brand, action.payload]}
+         //      }
+         //   })
+         // }
+           console.log('brandsArr',state);
+            const newDataBrand = state.homeData.results.products.filter((item) =>  item.brand === action.payload);
             state.homeData.results.products = newDataBrand;
-            return {...state, brand:[...state.bag, action.payload]}
+            let newBrandState = [...state.brand, action.payload];
+            console.log(newBrandState);
+            return {...state, brand:newBrandState}
         case "CATEGORY":
             const newDataCategory = state.homeData.results.products.filter((item) => item.category === action.payload);
             state.homeData.results.products = newDataCategory;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Lists,Input } from '../../Shared/Pages/SharedPagesElement';
 const Checkbox = ({item, getFilterType}) => {
+    // console.log('item:', item);
     return (
         <>
             <Lists>

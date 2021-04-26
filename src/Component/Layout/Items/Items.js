@@ -7,6 +7,7 @@ import ButtonChips from '../../Shared/Pages/ButtonChips';
 import { useStateValue } from '../../Shared/StateProvider/StateProvider';
 
 const Items = ({ element, sortFilter }) => {
+    console.log('element:', element);
     const [sortBy, setSortBy] = useState();
     const[{category, brand, gender}, dispatch] = useStateValue();
     // console.log(category, brand, gender)
@@ -29,12 +30,15 @@ const Items = ({ element, sortFilter }) => {
         </HeaderFilter>
 
             <ItemsContainer>
-                { element ? (
+                { element && element.length > 0 ? (
                     element.map((listItem, index) => {
                         return <Item key={ listItem.productId } element={ listItem } />
                     })
                 ):(
+                    <>
                     <h1>No data found</h1>
+                    {alert('There are no result for your selected filter, please reload and search again')}
+                    </>
                 )
                 }
             </ItemsContainer>
